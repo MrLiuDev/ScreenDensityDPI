@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void calculateDpi(float size) {
         float dpi = (float) (Math.sqrt(Math.pow(width, 2)+ Math.pow(height, 2)) / size);
-        tv2.setText("DPI："+dpi);
+        tv2.setText("DPI："+dpi+"\nwidth："+width+"\nheight："+height);
     }
 
     private void initViews() {
