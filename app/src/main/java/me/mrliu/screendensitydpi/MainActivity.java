@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ContextUtils.init(getApplicationContext());
+
         initViews();
         setListeners();
         getScreenInfo();
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void calculateDpi(float size) {
         float dpi = (float) (Math.sqrt(Math.pow(width, 2)+ Math.pow(height, 2)) / size);
-        tv2.setText("DPI："+dpi+"\nwidth："+width+"\nheight："+height);
+        tv2.setText("DPI："+dpi+"\nWidthPx："+width+"\nHeightPx："+height+"\nWidthDp："+ConvertUtils.px2dp(width)+"\nHeightDp："+ConvertUtils.px2dp(height));
     }
 
     private void initViews() {
